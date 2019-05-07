@@ -1,5 +1,6 @@
 click
 Flask
+flask-cors
 h5py
 itsdangerous
 Jinja2
