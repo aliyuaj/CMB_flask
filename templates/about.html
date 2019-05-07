@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CMB Detection | Home</title>
+    <title>CMB Tool | About</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static',    filename='css/bootstrap.min.css') }}"  rel="stylesheet">
@@ -25,12 +25,22 @@
 	body {
 		padding-top: 85px;
 	}
+  .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 70px; /* Vertically center the text there */
+  background-color: #f1f1f1;
+}
+
 	</style>
 	
   </head>
 
   <body>
-
+    <header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -40,19 +50,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">CMB Detection</a>
+          <a class="navbar-brand" href="#">CMB Tool</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class=><a href="/CMB">Home</a></li>
+            <li class=><a href="/">Home</a></li>
             <li><a href="#">About Project</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-	<div class="container">
-			<div class="alert alert-info lead" style="text-align=justify;color:black" role="alert">
-		  <h4 class="alert-heading">Note!</h4>
+    </header>
+	<main class="container">
+			<div class="alert alert-info" style="text-align=justify;color:black" role="alert">
+		  <h2 class="alert-heading">Project Abstract</h2>
 		  <p >The aim of the project is to develop web based automatic Cerebral 
 				microbleeding (CMB) diagnosis tool based on machine learning
 				. CMB is small foci of chronic blood products in healthy brain tissues.
@@ -65,15 +76,21 @@
 				inhomogeneity in the magnetic field around CMB, leading fast decay of MRI signal.
 				Hence, CMB appear hypointensity in the scanned image.</p>
 		  <hr>
-			<p class="mb-0 lead">This model was trained with dataset from this research <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/cpe.5130">paper</a>. Therefore it is 
-			imporant that images undergo similar preprocessing techniques for accurate result.</p>
+			<p class="mb-0 lead"><span  style="text-decoration:underline">NOTE:</span> The model used by this tool for CMB detection attained a record accuracy of 98.8% using dataset from this <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/cpe.5130"> research paper</a>. Therefore, it is 
+			imporant that images undergo similar preparation techniques for accurate result.</p>
 	</div>
 	
 	
-    </div> <!-- /container -->
+    </main> <!-- /container -->
 
 
-
+  <footer class='footer footer-para'>
+        <div style='text-align:center;font-weight:bold;color:yellowgreen;font-size:18px;font-family: "Comic Sans MS", cursive, sans-serif';>
+     <span>
+        <a href='https://github.com/aliyuaj'><i class='fa fa-github' data-toggle='tooltip' title='Github'></i>Aliyu AJ </a>&copy 2019
+            
+          </span>  </div>
+        </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
