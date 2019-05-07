@@ -3,7 +3,7 @@ Flask
 h5py
 itsdangerous
 Jinja2
-Keras
+Keras==2.2.4
 Keras-Applications
 Keras-Preprocessing
 Markdown
