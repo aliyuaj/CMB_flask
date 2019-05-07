@@ -41,6 +41,7 @@ def predict():
 	processed_img= img_preprocess(img,target_size=(41,41))
 	prediction = model.predict(processed_img).tolist()
 	response = {
-		'CMB': prediction[0]
+		'CMB': prediction[0][1],
+		'Non_CMB': prediction[0][0]
 	}
 	return jsonify(response)
