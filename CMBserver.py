@@ -24,7 +24,7 @@ def img_preprocess(image,target_size):
 	image=img_to_array(image)
 	image = np.expand_dims(image,axis=0)
 	return image
-@app.route('/CMB')
+@app.route('/')
 def index():
     return render_template("index.html")
 @app.route('/about')
