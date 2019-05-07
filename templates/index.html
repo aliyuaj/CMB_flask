@@ -62,13 +62,10 @@
 			}
 			console.log(message);
 			$.post("https://cmbtool.azurewebsites.net/predict",JSON.stringify(message), function(response){
-				if(response.CMB==1){
-					$("#CMB").text('CMB');
-				console.log(response.CMB);
-				}else{
-					$("#CMB").text('Non-CMB');
-				console.log(response.CMB);
-				}
+				$("#CMB").text(response.CMB.toFixed(5)*100+"%");
+				$("#Non_CMB").text(response.Non_CMB.toFixed(5)*100+"%");
+				console.log(response);
+
 			});
 		});
 	});
@@ -108,7 +105,9 @@
 			
 		</div>
 		<div class="container center" style="padding:15px">
-				<p> <b>Model Prediction:</b> <span id="CMB" style="\font-weight:bolder"></span></p>
+				<h4 style="text-decoration:underline"> <b>Model Prediction:</b></h4>
+				<p><b>CMB: </b><span id="CMB" style="\font-weight:bolder"></span></p>
+				<p><b>Non-CMB: </b><span id="Non_CMB" style="\font-weight:bolder"></span></p>
 				<img id="display-image" src="" class="img-thumbnail"/>
 			</div>
     </main> <!-- /container -->
