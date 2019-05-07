@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CMB Detection | Home</title>
+    <title>CMB Tool | Home</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static',    filename='css/bootstrap.min.css') }}"  rel="stylesheet">
     <link href="{{ url_for('static',    filename='css/signin.css') }}"  rel="stylesheet">
@@ -30,6 +30,15 @@
 	  border-radius: 40px 25px;
 	  padding: 10px;
 	}
+	.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f1f1f1;
+}
 	</style>
 	<script src="{{ url_for('static',    filename='js/jquery-3.4.0.min.js')}}"></script>
 	<script> 
@@ -52,7 +61,7 @@
 				image:base64Image
 			}
 			console.log(message);
-			$.post("http://127.0.0.1:5000/predict",JSON.stringify(message), function(response){
+			$.post("https://cmbtool.azurewebsites.net/predict",JSON.stringify(message), function(response){
 				if(response.CMB==1){
 					$("#CMB").text('CMB');
 				console.log(response.CMB);
@@ -67,7 +76,7 @@
   </head>
 
   <body>
-
+		<header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -87,7 +96,8 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-	<div class="container">
+		</header>
+	<main class="container">
 		<div class="form-signin">
 			<div class="form-group">
 				  <h2 class="form-signin-heading">Please Upload</h2>
@@ -101,12 +111,15 @@
 				<p> <b>Model Prediction:</b> <span id="CMB" style="\font-weight:bolder"></span></p>
 				<img id="display-image" src="" class="img-thumbnail"/>
 			</div>
-		
-	
-    </div> <!-- /container -->
-
-
-
+    </main> <!-- /container -->
+  <footer class='footer footer-para'>
+        <div style='text-align:center;font-weight:bold;color:yellowgreen;font-size:18px;font-family: "Comic Sans MS", cursive, sans-serif';>
+     <span>
+        <a href='https://github.com/aliyuaj'><i class='fa fa-github' data-toggle='tooltip' title='Github'></i>Aliyu AJ </a>&copy 2019
+            
+          </span>  </div>
+        </footer>
+  
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
