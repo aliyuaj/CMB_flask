@@ -1,6 +1,7 @@
 import base64
 import io
 from flask import Flask,render_template
+from flask_cors import CORS, cross_origin
 from flask import request
 from flask import jsonify
 import numpy as np
@@ -13,6 +14,7 @@ from keras.models import load_model
 
 from keras.preprocessing.image import img_to_array
 app = Flask(__name__)
+CORS(app)
 #modelfile = 'model.pkl'
 global model
 model = load_model("CMB_model_TL.h5")
