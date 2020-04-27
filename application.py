@@ -17,7 +17,7 @@ app = Flask(__name__)
 CORS(app)
 #modelfile = 'model.pkl'
 global model
-model = load_model("CMB_model_TL2.h5")
+model = load_model("cmb_model_1.h5")
 model._make_predict_function()
 def img_preprocess(image,target_size):
 	if image.mode !="RGB":
