@@ -11,6 +11,7 @@ Markdown
 MarkupSafe
 numpy
 Pillow
+gunicorn==19.9.0
 termcolor
 uWSGI
 Werkzeug
