@@ -60,7 +60,7 @@
 				image:base64Image
 			}
 			console.log(message);
-			$.post("https://cmbtool.herokuapp.com/predict",JSON.stringify(message), function(response){
+			$.post("50.19.103.36:5000/predict",JSON.stringify(message), function(response){
 				$("#CMB").text(response.CMB.toFixed(5));
 				$("#Non_CMB").text(response.Non_CMB.toFixed(5));
 				console.log(response);
